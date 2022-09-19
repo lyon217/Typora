@@ -72,3 +72,26 @@ Liou和LGiou都有的问题是收敛慢，并且回归的不够准确
 ![image-20220915214146375](YOLO_v3SPP.assets/image-20220915214146375.png)
 
 ![image-20220915214528462](YOLO_v3SPP.assets/image-20220915214528462.png)
+
+#### 引入$\alpha$
+
+![image-20220916091738549](YOLO_v3SPP.assets/image-20220916091738549.png)
+
+- 使用的策略是\alpha 对于正样本，负样本则使用 1-\alpha
+
+- $\alpha$只是一个超参数，来调整正负样本的权重，并不是正负样本的比例，
+
+![image-20220916092126184](YOLO_v3SPP.assets/image-20220916092126184.png)
+
+- $(1-p_t)^y$能够降低易分样本的损失贡献，易分样本就是右边表格中，的well-classified examples，这些都是$p_t$的值非常大的样本
+- 易分样本是指无论正负并且预测得到的正确率很高的样本
+
+![image-20220916092548139](YOLO_v3SPP.assets/image-20220916092548139.png)
+
+- 将$\alpha$和两个部分结合起来发现当\alpha=0.25，\gmma=2.0时是最好的
+
+![image-20220916093212702](YOLO_v3SPP.assets/image-20220916093212702.png)
+
+- 通过表格可以看到 Focal Loss的核心就是可以更加专注于训练比较难学习的样本
+
+使用Focal Loss要注意的是训练集中尽量不好有错误的样本，否则会使劲学习错误样本
