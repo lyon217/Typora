@@ -1,0 +1,7 @@
+![image-20220923125224309](./01_BN and LN.assets/image-20220923125224309.png)
+
+![image-20220923124802129](./01_BN and LN.assets/image-20220923124802129.png)
+
+![image-20220923124906219](./01_BN and LN.assets/image-20220923124906219.png)
+
+![image-20220923125142160](./01_BN and LN.assets/image-20220923125142160.png)
